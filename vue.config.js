@@ -7,7 +7,7 @@ module.exports = {
         port:8080,//端口
         proxy:{//代理
             '/api':{//拦截访问 /activity 的时候
-                target:'https://www.imooc.com',//代理到http://www.imooc.com
+                target:'http://mall-pre.springboot.cn',//代理到http://www.imooc.com
                 changeOrigin:true,//是否要将主机头的源点更改为目标url地址
                 pathRewrite:{//转发地址
                     '/api':''

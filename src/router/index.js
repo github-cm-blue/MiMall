@@ -60,6 +60,11 @@ export default new Router({
                     component:()=>import('../views/aliPay/index')
                 }
             ]
+        },
+        {
+            path:'/login',
+            name:'Login',
+            component:()=>import('../views/login/index')
         }
     ]
 })
