@@ -17,19 +17,19 @@ let baseURL;
 
 switch (process.env.NODE_ENV) {//获取当前进程里nodeJs的环境变量
     case 'development':
-        baseURL = 'http://mall-pre.springboot.cn/api'//开发环境
+        baseURL = 'http://localhost:5000'//开发环境
         break;
     case 'test':
-        baseURL = 'http://test-mall-pre.springboot.cn/api'//测试环境
+        baseURL = 'http://localhost:5000'//测试环境
         break;
     case 'production':
-        baseURL = 'http://mall-pre.springboot.cn/api'//线上环境
+        baseURL = 'http://localhost:5000'//线上环境
         break;
     case 'custom':
-        baseURL = 'http://custom-mall-pre.springboot.cn/api'//自定义
+        baseURL = 'http://localhost:5000'//自定义
         break;
     default:
-        baseURL = 'http://mall-pre.springboot.cn/api'//默认线上环境
+        baseURL = 'http://localhost:5000'//默认线上环境
         break;
 }
 

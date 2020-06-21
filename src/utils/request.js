@@ -11,14 +11,17 @@ import { Message } from 'element-ui'
 //创建一个axios实例,并配置基本信息
 const service = axios.create({
     // baseURL: env.baseURL,
-    baseURL:'/api',
+    baseURL: '/api',
     timeout: 8000
 })
 
 //请求拦截
 service.interceptors.request.use(function (config) {
     //在发送请求之前做一些事情
-    return config;
+
+  return config
+
+
 }, function (error) {
     //做一些有请求错误的事情
     return Promise.reject(error);
@@ -31,8 +34,12 @@ service.interceptors.response.use(function (response) {
         //成功
         return res.data;
     } else if (res.status == 10) {
-        //未登录
-        window.location.href = '/#/login';
+        let currentUrl = location.hash;//获取当期那页面的hash路由
+        if (currentUrl != '#/index') {//允许主页用户不需要登录
+            //未登录
+            window.location.href = '/#/login';
+        }
+
     } else {
         //错误
         return Promise.reject(res.message || 'Error');
