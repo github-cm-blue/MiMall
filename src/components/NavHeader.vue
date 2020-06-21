@@ -29,58 +29,19 @@
             <span>小米手机</span>
             <div class="children">
               <ul>
-                <li class="product">
-                  <a href="/#/product/31" target="_blank">
+                <li
+                  class="product"
+                  v-for="item in getProductByCategory(1)"
+                  :key="item.product.productId"
+                >
+                  <a :href="'/#/product/'+item.product.productId" target="_blank">
                     <div class="pro-img">
-                      <img src="/imgs/nav-img/nav-1.png" alt />
+                      <img :src="item.picture.productPicture1" alt />
                     </div>
-                    <div class="pro-name">小米CC9</div>
-                    <div class="pro-price">1799元</div>
-                  </a>
-                </li>
-                <li class="product">
-                  <a href="/#/product/31" target="_blank">
-                    <div class="pro-img">
-                      <img src="/imgs/nav-img/nav-1.png" alt />
-                    </div>
-                    <div class="pro-name">小米CC9</div>
-                    <div class="pro-price">1799元</div>
-                  </a>
-                </li>
-                <li class="product">
-                  <a href="/#/product/31" target="_blank">
-                    <div class="pro-img">
-                      <img src="/imgs/nav-img/nav-1.png" alt />
-                    </div>
-                    <div class="pro-name">小米CC9</div>
-                    <div class="pro-price">1799元</div>
-                  </a>
-                </li>
-                <li class="product">
-                  <a href="/#/product/31" target="_blank">
-                    <div class="pro-img">
-                      <img src="/imgs/nav-img/nav-1.png" alt />
-                    </div>
-                    <div class="pro-name">小米CC9</div>
-                    <div class="pro-price">1799元</div>
-                  </a>
-                </li>
-                <li class="product">
-                  <a href="/#/product/31" target="_blank">
-                    <div class="pro-img">
-                      <img src="/imgs/nav-img/nav-1.png" alt />
-                    </div>
-                    <div class="pro-name">小米CC9</div>
-                    <div class="pro-price">1799元</div>
-                  </a>
-                </li>
-                <li class="product">
-                  <a href="/#/product/31" target="_blank">
-                    <div class="pro-img">
-                      <img src="/imgs/nav-img/nav-1.png" alt />
-                    </div>
-                    <div class="pro-name">小米CC9</div>
-                    <div class="pro-price">1799元</div>
+                    <div class="pro-name">{{item.product.productName}}</div>
+                    <div
+                      class="pro-price"
+                    >{{item.product.productIntro.length>6?item.product.productIntro.substring(0,5):item.product.productIntro}}</div>
                   </a>
                 </li>
               </ul>
@@ -88,63 +49,43 @@
           </div>
           <div class="item-menu">
             <span>RedMi红米</span>
+            <div class="children">
+              <ul>
+                <li
+                  class="product"
+                  v-for="item in getProductByCategory(2)"
+                  :key="item.product.productId"
+                >
+                  <a :href="'/#/product/'+item.product.productId" target="_blank">
+                    <div class="pro-img">
+                      <img :src="item.picture.productPicture1" alt />
+                    </div>
+                    <div class="pro-name">{{item.product.productName}}</div>
+                    <div
+                      class="pro-price"
+                    >{{item.product.productIntro.length>6?item.product.productIntro.substring(0,5):item.product.productIntro}}</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="item-menu">
             <span>电视</span>
             <div class="children">
               <ul>
-                <li class="product">
-                  <a href target="_blank">
+                <li
+                  class="product"
+                  v-for="item in getProductByCategory(3)"
+                  :key="item.product.productId"
+                >
+                  <a :href="'/#/product/'+item.product.productId" target="_blank">
                     <div class="pro-img">
-                      <img v-lazy="'/imgs/nav-img/nav-3-1.jpg'" alt />
+                      <img  :src="item.picture.productPicture1" alt /> <!--懒加载v-lazy-->
                     </div>
-                    <div class="pro-name">小米壁画电视 65英寸</div>
-                    <div class="pro-price">6999元</div>
-                  </a>
-                </li>
-                <li class="product">
-                  <a href target="_blank">
-                    <div class="pro-img">
-                      <img v-lazy="'/imgs/nav-img/nav-3-2.jpg'" alt />
-                    </div>
-                    <div class="pro-name">小米全面屏电视E55A</div>
-                    <div class="pro-price">1999元</div>
-                  </a>
-                </li>
-                <li class="product">
-                  <a href target="_blank">
-                    <div class="pro-img">
-                      <img v-lazy="'/imgs/nav-img/nav-3-3.png'" alt />
-                    </div>
-                    <div class="pro-name">小米电视4A 32英寸</div>
-                    <div class="pro-price">699元</div>
-                  </a>
-                </li>
-                <li class="product">
-                  <a href target="_blank">
-                    <div class="pro-img">
-                      <img v-lazy="'/imgs/nav-img/nav-3-4.jpg'" alt />
-                    </div>
-                    <div class="pro-name">小米电视4A 55英寸</div>
-                    <div class="pro-price">1799元</div>
-                  </a>
-                </li>
-                <li class="product">
-                  <a href target="_blank">
-                    <div class="pro-img">
-                      <img v-lazy="'/imgs/nav-img/nav-3-5.jpg'" alt />
-                    </div>
-                    <div class="pro-name">小米电视4A 65英寸</div>
-                    <div class="pro-price">2699元</div>
-                  </a>
-                </li>
-                <li class="product">
-                  <a href target="_blank">
-                    <div class="pro-img">
-                      <img v-lazy="'/imgs/nav-img/nav-3-6.png'" alt />
-                    </div>
-                    <div class="pro-name">查看全部</div>
-                    <div class="pro-price">查看全部</div>
+                    <div class="pro-name">{{item.product.productName}}</div>
+                    <div
+                      class="pro-price"
+                    >{{item.product.productIntro.length>6?item.product.productIntro.substring(0,5):item.product.productIntro}}</div>
                   </a>
                 </li>
               </ul>
@@ -162,22 +103,51 @@
   </div>
 </template>
 <script>
-import {mapState} from 'vuex'
+import { mapState } from "vuex";
 export default {
   name: "nav-header",
   data() {
-    return {};
+    return {
+      categoryProduct: []
+    };
   },
   computed: {
+    getProductByCategory() {
+      return function(id) {
+        var data = this.categoryProduct.filter(item => {
+          if (item.product.categoryId == id) {
+            return item;
+          }
+        });
+        return data;
+      };
+    },
     // nickname() {
     //   return this.$store.state.nickname;
     // },
     // cartcount(){
     //   return this.$store.state.cartcount
     // },
-    ...mapState(['nickname','cartcount'])
+    ...mapState(["nickname", "cartcount"])
+  },
+  mounted() {
+    // console.log(this.qs.stringify([1, 2], { arrayFormat: "repeat" }));
+    this.getCategoryProduct();
   },
   methods: {
+    //获取分类商品
+    getCategoryProduct() {
+      this.request({
+        url: "/Products/getCategoryProducts",
+        method: "get",
+        params: {
+          cids: "1&2&3",
+          pageSize: 6
+        }
+      }).then(response => {
+        this.categoryProduct = response;
+      });
+    },
     login() {
       this.$router.push("/login");
     },

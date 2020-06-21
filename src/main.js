@@ -2,6 +2,7 @@ import Vue from 'vue'
 import qs from 'qs'
 import VueCookie from 'vue-cookie'
 import VueLazyLoad from 'vue-lazyload'
+import ElementUI from 'element-ui'
 
 import router from './router/index'
 import request from './utils/request'
@@ -15,6 +16,7 @@ if(mock){
   require('./mock/api')
 }
 
+Vue.use(ElementUI);
 Vue.use(VueCookie);
 Vue.use(VueLazyLoad, {
   loading: '/imgs/loading-svg/loading-bars.svg'
